@@ -28,3 +28,8 @@ body {
     /*contain*/
     background-attachment: fixed;
 }
+
+.main-content {
+    margin-top: 160px;
+    margin-bottom: 50px;
+}
