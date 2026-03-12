@@ -4,7 +4,7 @@ import { LoginPage } from './pages/login-page/login-page';
 import { SubscribePage } from './pages/subscribe-page/subscribe-page';
 import { AccountManagerPage } from './pages/account-manager-page/account-manager-page';
 import { RecipeCalculatorPage } from './pages/recipe-calculator-page/recipe-calculator-page';
-import { RecipeManagerPage } from './pages/recipe-manager-page/recipe-manager-page';
+import { RecettesManagerPage } from './pages/recipe-manager-page/recipe-manager-page';
 import { UsersManagerPage } from './pages/users-manager-page/users-manager-page';
 import { IngredientsManagerPage } from './pages/ingredients-manager-page/ingredients-manager-page';
 import { AboutPage } from './pages/about-page/about-page';
@@ -24,7 +24,7 @@ export const routes: Routes = [
 
     // Recettes :
     { path: 'recipe-calculator', component: RecipeCalculatorPage },
-    { path: 'recipe-manager', component: RecipeManagerPage},
+    { path: 'recipe-manager', component: RecettesManagerPage},
 
     // Administration - Gestion :
     { path: 'users-manager', component: UsersManagerPage },
