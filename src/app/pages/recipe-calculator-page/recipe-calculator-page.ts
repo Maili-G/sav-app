@@ -28,7 +28,10 @@ export class RecipeCalculatorPage implements OnInit {
     avecSoude: false,
     concentrationAlcali: 0,
     ligneIngredients: []
-  }// Injection des services par le constructeur :
+  }
+  // Affichage de la recette après son calcul :
+  public recetteAffichee: Recette | null = null;
+  // Injection des services par le constructeur :
   constructor(
     private ingredientService: IngredientService,
     private recetteService: RecetteService
@@ -93,11 +96,16 @@ export class RecipeCalculatorPage implements OnInit {
     // 3. Envoi de la recette à l'API via le service recette :
     this.recetteService.createRecette(recetteEnvoyee).subscribe({
       next: (recette: Recette) => {
-        console.log('Recette reçue du backend :', recette);
+        this.recetteAffichee = recette; // On récupère la recette avec les scores
+        alert("Recette calculée et enregistrée avec succès !"); // Message succès
+        //console.log('Recette reçue du backend :', recette);
       },
       error: (err) => {
-        console.error('Erreur lors de la création de la recette :', err);
+        alert("Erreur lors du calcul. Vérifier vos données."); // Message échec
+        //console.error('Erreur lors de la création de la recette :', err);
       }
     });
   }
+
+
 }
