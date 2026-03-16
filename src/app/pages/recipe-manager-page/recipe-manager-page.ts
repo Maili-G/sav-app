@@ -29,4 +29,19 @@ export class RecettesManagerPage implements OnInit {
         this.chargerRecettes());
     }
   }
+
+  // Propriété pour stocker la recette à afficher dans la modale
+  public recetteSelectionnee: Recette | null = null;
+  /**
+  * Définit la recette sélectionnée pour l'affichage des détails
+  */
+  ouvrirModale(recette: Recette): void {
+    this.recetteSelectionnee = recette;
+  }
+  /**
+  * Réinitialise la sélection à la fermeture
+  */
+  fermerModale(): void {
+    this.recetteSelectionnee = null;
+  }
 }

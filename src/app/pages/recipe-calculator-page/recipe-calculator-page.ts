@@ -6,13 +6,17 @@ import { LigneIngredient, Recette } from '../../models/recette.model';
 import { LigneIngredientDTO, RecetteFormDTO } from '../../models/dto.model';
 import { IngredientService } from '../../services/ingredient.service';
 import { RecetteService } from '../../services/recette.service';
+
 @Component({
   selector: 'app-recipe-calculator-page',
   imports: [FormsModule, CommonModule],
   templateUrl: './recipe-calculator-page.html',
   styleUrl: './recipe-calculator-page.css',
 })
+
 export class RecipeCalculatorPage implements OnInit {
+  // Affichage de la recette après son calcul :
+  public recetteAffichee: Recette | null = null;
   // Liste des ingrédients disponibles :
   public ingredientsDispo: Ingredient[] = [];
   // Ingrédients sélectionnés :
@@ -26,11 +30,10 @@ export class RecipeCalculatorPage implements OnInit {
     description: '',
     surgraissage: 0,
     avecSoude: false,
-    concentrationAlcali: 0,
+    concentrationAlcalin: 0,
     ligneIngredients: []
   }
-  // Affichage de la recette après son calcul :
-  public recetteAffichee: Recette | null = null;
+
   // Injection des services par le constructeur :
   constructor(
     private ingredientService: IngredientService,

@@ -33,8 +33,8 @@
         <div class="form-check mb-3">
             <input type="checkbox" id="avecSoude" class="form-check-input" name="avecSoude"
                 [(ngModel)]="nouvelleRecetteDTO.avecSoude" (ngModelChange)="nouvelleRecetteDTO.avecSoude ?
-nouvelleRecetteDTO.concentrationAlcali = 90 :
-nouvelleRecetteDTO.concentrationAlcali = nouvelleRecetteDTO.concentrationAlcali">
+nouvelleRecetteDTO.concentrationAlcalin = 90 :
+nouvelleRecetteDTO.concentrationAlcalin = nouvelleRecetteDTO.concentrationAlcalin">
             <label for="avecSoude" class="form-check-label">Avec Soude</label>
         </div>
         Etat soude : {{ nouvelleRecetteDTO.avecSoude }}
@@ -43,7 +43,7 @@ nouvelleRecetteDTO.concentrationAlcali = nouvelleRecetteDTO.concentrationAlcali"
             <label for="concentration" class="form-label">Concentration Alcalin
                 (%) :</label>
             <input type="number" id="concentration" class="form-control" name="concentration"
-                [(ngModel)]="nouvelleRecetteDTO.concentrationAlcali">
+                [(ngModel)]="nouvelleRecetteDTO.concentrationAlcalin">
         </div>
     </div>
 </div>
@@ -83,8 +83,7 @@ nouvelleRecetteDTO.concentrationAlcali = nouvelleRecetteDTO.concentrationAlcali"
                 </tr>
             </thead>
             <tbody>
-                @for (ligne of selectionIngredients; track (ligne.ingredient?.id
-                || $index); let i = $index) {
+                @for (ligne of selectionIngredients; track (ligne.ingredient?.id || $index); let i = $index) {
                 <tr>
                     <td>
                         {{ ligne.ingredient.nom }}
@@ -125,6 +124,7 @@ nouvelleRecetteDTO.concentrationAlcali = nouvelleRecetteDTO.concentrationAlcali"
         Envoyer
     </button>
 </div>
+
 @if (recetteAffichee) {
 <div class="card my-5 border-primary shadow-sm">
     <div class="card-header bg-primary text-white">
@@ -151,7 +151,7 @@ nouvelleRecetteDTO.concentrationAlcali = nouvelleRecetteDTO.concentrationAlcali"
     </div>
     <div class="card-footer d-flex justify-content-around bg-light">
         <span>Eau : <b>{{ recetteAffichee.apportEnEau.toFixed(2) }} g</b></span>
-        <span>Alcalin : <b>{{ recetteAffichee.qteAlcali.toFixed(2) }} g</b>
+        <span>Alcalin : <b>{{ recetteAffichee.qteAlcalin.toFixed(2) }} g</b>
         </span>
     </div>
 </div>

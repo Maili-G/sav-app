@@ -26,7 +26,7 @@ export interface Recette {
     apportEnEau: number;
     avecSoude: boolean;
     concentrationAlcali: number;
-    qteAlcali: number;
+    qteAlcalin: number;
     ligneIngredients: LigneIngredient[];
     resultats: Resultat[];
 }
