@@ -41,7 +41,13 @@
                         </li>
                     </ul>
 
-                    <div class="d-flex justify-content-between">
+                    <!-- Affichage du graphe radar : -->
+                    <div class="chart-container mb-3" style="position: relative; height:400px;">
+                        <canvas [id]="'chart-' + recette.id"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="mt-4 d-flex justify-content-between mt-auto">
                         <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#modalDetails" (click)="ouvrirModale(recette)">
                             Détails
@@ -50,6 +56,7 @@
                             Supprimer
                         </button>
                     </div>
+
                 </div>
             </div>
         </div>
