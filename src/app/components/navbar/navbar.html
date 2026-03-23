@@ -26,27 +26,29 @@ navbar navbar-expand-sm p-0 mb-4">
                     </a>
                 </li>
                 <!-- Accès aux recettes de l'utilisateur -->
-                <li class="nav-item"><a class="nav-link" routerLink="recipe-manager" routerLinkActive="active" title="Gérer mes recettes (retrouver ,modifier,
-supprimer...)">
+                <li class="nav-item"><a class="nav-link" routerLink="recipe-manager" routerLinkActive="active"
+                        title="Gérer mes recettes (retrouver ,modifier, supprimer...)">
                         <i class="bi bi-journal-text"> </i>
                         Mes recettes
                     </a>
                 </li>
-                <!-- Accès gestion des utilisateurs pour l'administrateur
-<li class="nav-item admin-only">
-<a class="nav-link"
-routerLink="users-manager"
-routerLinkActive="active"
-title="Gérer les utilisateurs">
-<i class="bi bi-people-fill"> </i>
-Utilisateurs
-</a>
-</li>
--->
+                <!-- Accès gestion des utilisateurs pour l'administrateur -->
+                @if (authService.isAuthenticated()) {
+                    @if (authService.hasRole('ROLE_ADMIN')) {
+                        <li class="nav-item admin-only">
+                            <a class="nav-link" routerLink="users-manager" routerLinkActive="active"
+                                title="Gérer les utilisateurs">
+                                <i class="bi bi-people-fill"> </i>
+                                Utilisateurs
+                            </a>
+                        </li>
+                    }
+                }
+
                 <!-- Accès gestion des ingrédients pour l'administrateur -->
                 <li class="nav-item admin-only">
-                    <a class="nav-link" routerLink="ingredients-manager" routerLinkActive="active" title="Gérer les ingrédients (corps gras et agents
-alcalins)">
+                    <a class="nav-link" routerLink="ingredients-manager" routerLinkActive="active"
+                        title="Gérer les ingrédients (corps gras et agents alcalins)">
                         <i class="bi bi-collection-fill"> </i>
                         Ingrédients
                     </a>
